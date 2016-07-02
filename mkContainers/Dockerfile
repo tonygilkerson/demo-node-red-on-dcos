@@ -1,4 +1,4 @@
-FROM node:<version>
+FROM node:4.4.7
 
 MAINTAINER Tony Gilkerson <tonygilkerson@yahoo.com>
 
@@ -13,4 +13,4 @@ EXPOSE 1880
 
 # Set the default command to execute
 # when creating a new container
-CMD ["/usr/local/bin/node-red --settings /usr/src/app/settings.js /usr/src/app/flows.json"]
+CMD ["/usr/local/bin/node-red",  "--settings /usr/src/app/settings.js",  "/usr/src/app/flows.json"]
