@@ -5,7 +5,7 @@ MAINTAINER Tony Gilkerson <tonygilkerson@yahoo.com>
 # install node-red
 RUN npm install -g node-red
 
-# add AQMP node to pallet
+# add AQMP node to pallet.
 RUN npm install -g node-red-contrib-amqp
 
 #copy nodered config files into the app folder
