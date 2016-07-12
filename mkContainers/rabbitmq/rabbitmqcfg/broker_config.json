@@ -1,0 +1,110 @@
+{
+  "rabbit_version": "3.6.3",
+  "users": [
+    {
+      "name": "demo",
+      "password_hash": "6tfHpiK6hHsv8YYEZjb2NYNenyK0Zz32nQHjrE4dNxaXdTtM",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    },
+    {
+      "name": "guest",
+      "password_hash": "olE2fcCbPC89zwckQptMUdU+HSI/GOZzNapTj/z6q4VAdH8T",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "demo-vhost"
+    },
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "demo",
+      "vhost": "demo-vhost",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "guest",
+      "vhost": "demo-vhost",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "guest",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "parameters": [],
+  "policies": [],
+  "queues": [
+    {
+      "name": "s3q",
+      "vhost": "demo-vhost",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "s2q",
+      "vhost": "demo-vhost",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "s1q",
+      "vhost": "demo-vhost",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "demo.router",
+      "vhost": "demo-vhost",
+      "type": "direct",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "demo.router",
+      "vhost": "demo-vhost",
+      "destination": "s1q",
+      "destination_type": "queue",
+      "routing_key": "s1",
+      "arguments": {}
+    },
+    {
+      "source": "demo.router",
+      "vhost": "demo-vhost",
+      "destination": "s2q",
+      "destination_type": "queue",
+      "routing_key": "s2",
+      "arguments": {}
+    },
+    {
+      "source": "demo.router",
+      "vhost": "demo-vhost",
+      "destination": "s3q",
+      "destination_type": "queue",
+      "routing_key": "s3",
+      "arguments": {}
+    }
+  ]
+}

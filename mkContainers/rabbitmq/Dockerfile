@@ -1,19 +1,21 @@
-FROM node:4.4.7
+FROM rabbitmq:3-management
 
 MAINTAINER Tony Gilkerson <tonygilkerson@yahoo.com>
 
-# install node-red
-RUN npm install -g node-red
+# install python
+RUN apt-get update && apt-get install -y python2.7
 
-# add AQMP node to pallet.
-RUN npm install -g node-red-contrib-amqp
+# default exchange and queues
+ADD rabbitmqcfg /etc/rabbitmq/
 
-#copy nodered config files into the app folder
-ADD noderedcfg /usr/src/app/
+# Add script to create import config then start
+ADD init.sh /init.sh
+
+# Set correct executable permissions
+RUN chmod +x /init.sh
 
 # expose port
-EXPOSE 1880
+EXPOSE 5672 15672 25672
 
-# Set the default command to execute
-# when creating a new container
-CMD ["/usr/local/bin/node-red",  "--settings /usr/src/app/settings.js",  "/usr/src/app/flows.json"]
+# Define default command
+CMD ["/init.sh"]
