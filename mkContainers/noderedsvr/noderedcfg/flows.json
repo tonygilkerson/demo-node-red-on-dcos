@@ -1,1 +1,333 @@
-[{"type":"tab","id":"1cacabe3.36b064","label":"test flow"},{"id":"f6918e5.c8d247","type":"http in","z":"1cacabe3.36b064","name":"test","url":"/test","method":"get","swaggerDoc":"","x":140,"y":120,"wires":[["597d85d4.d140cc"]]},{"id":"70b22ed7.2d977","type":"http response","z":"1cacabe3.36b064","name":"","x":630,"y":120,"wires":[]},{"id":"597d85d4.d140cc","type":"function","z":"1cacabe3.36b064","name":"got it!","func":"msg.payload = \"got it!\";\nreturn msg;","outputs":1,"noerr":0,"x":390,"y":120,"wires":[["70b22ed7.2d977"]]}]
+[
+  {
+    "id": "50a38450.70a7cc",
+    "type": "amqp in",
+    "z": "1cacabe3.36b064",
+    "name": "",
+    "topic": "",
+    "iotype": "4",
+    "ioname": "s1q",
+    "server": "d8d10958.dea5f8",
+    "x": 108.5,
+    "y": 100.14999389648438,
+    "wires": [
+      [
+        "3d259723.e482b8"
+      ]
+    ]
+  },
+  {
+    "id": "b1f8b904.289928",
+    "type": "debug",
+    "z": "1cacabe3.36b064",
+    "name": "",
+    "active": true,
+    "console": "false",
+    "complete": "payload.trace",
+    "x": 990,
+    "y": 340,
+    "wires": []
+  },
+  {
+    "id": "70d81161.526c8",
+    "type": "amqp out",
+    "z": "1cacabe3.36b064",
+    "name": "",
+    "routingkey": "",
+    "iotype": "4",
+    "ioname": "chrq",
+    "server": "d8d10958.dea5f8",
+    "x": 421.5,
+    "y": 62.30000305175781,
+    "wires": []
+  },
+  {
+    "id": "3d259723.e482b8",
+    "type": "function",
+    "z": "1cacabe3.36b064",
+    "name": "s1 service",
+    "func": "var trace = String(msg.payload.trace);\ntrace = trace.concat(\", s1 EXEC\");\nmsg.payload.trace = trace;\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 256.5,
+    "y": 115.44999694824219,
+    "wires": [
+      [
+        "70d81161.526c8"
+      ]
+    ]
+  },
+  {
+    "id": "9f8de836.a94808",
+    "type": "amqp in",
+    "z": "1cacabe3.36b064",
+    "name": "",
+    "topic": "",
+    "iotype": "4",
+    "ioname": "chrq",
+    "server": "d8d10958.dea5f8",
+    "x": 70,
+    "y": 240,
+    "wires": [
+      [
+        "5df80e9f.b83ba"
+      ]
+    ]
+  },
+  {
+    "id": "14999bb0.1c6124",
+    "type": "inject",
+    "z": "1cacabe3.36b064",
+    "name": "sx to chr",
+    "topic": "",
+    "payload": "{\"org\" : \"org1\", \"service\" : \"s1\" , \"trace\" : \"s1 START\"}",
+    "payloadType": "json",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 113.5,
+    "y": 35.149993896484375,
+    "wires": [
+      [
+        "70d81161.526c8"
+      ]
+    ]
+  },
+  {
+    "id": "5df80e9f.b83ba",
+    "type": "function",
+    "z": "1cacabe3.36b064",
+    "name": "restore FC",
+    "func": "var trace = String(msg.payload.trace);\ntrace = trace.concat(\", restore FC\");\nmsg.payload.trace = trace;\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 150,
+    "y": 340,
+    "wires": [
+      [
+        "17355d64.64b853"
+      ]
+    ]
+  },
+  {
+    "id": "17355d64.64b853",
+    "type": "switch",
+    "z": "1cacabe3.36b064",
+    "name": "select org",
+    "property": "payload.org",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "org1",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "org2",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "outputs": 2,
+    "x": 320,
+    "y": 340,
+    "wires": [
+      [
+        "b90a421d.a9f4f"
+      ],
+      [
+        "6ce73a3c.0d13e4"
+      ]
+    ]
+  },
+  {
+    "id": "b90a421d.a9f4f",
+    "type": "switch",
+    "z": "1cacabe3.36b064",
+    "name": "org1 select service",
+    "property": "payload.service",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "s0",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "s1",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "s2",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "outputs": 3,
+    "x": 514.5,
+    "y": 243.44998168945312,
+    "wires": [
+      [
+        "be511805.817b38"
+      ],
+      [
+        "b4e6d179.be992"
+      ],
+      [
+        "f444a795.8afc78"
+      ]
+    ]
+  },
+  {
+    "id": "6ce73a3c.0d13e4",
+    "type": "switch",
+    "z": "1cacabe3.36b064",
+    "name": "org2 select service",
+    "property": "payload.service",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "s0",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "s1",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "s2",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "outputs": 3,
+    "x": 510,
+    "y": 420,
+    "wires": [
+      [
+        "500d97a1.34cfb8"
+      ],
+      [
+        "5a702a0b.c70754"
+      ],
+      [
+        "789d60d3.8a0ba"
+      ]
+    ]
+  },
+  {
+    "id": "be511805.817b38",
+    "type": "function",
+    "z": "1cacabe3.36b064",
+    "name": "o1 s0",
+    "func": "var trace = String(msg.payload.trace);\ntrace = trace.concat(\", o1s0 STOP\");\nmsg.payload.trace = trace;\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 710,
+    "y": 180,
+    "wires": [
+      [
+        "b1f8b904.289928"
+      ]
+    ]
+  },
+  {
+    "id": "b4e6d179.be992",
+    "type": "function",
+    "z": "1cacabe3.36b064",
+    "name": "o1 s1",
+    "func": "var trace = String(msg.payload.trace);\ntrace = trace.concat(\", o1s1 STOP\");\nmsg.payload.trace = trace;\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 710,
+    "y": 240,
+    "wires": [
+      [
+        "b1f8b904.289928"
+      ]
+    ]
+  },
+  {
+    "id": "f444a795.8afc78",
+    "type": "function",
+    "z": "1cacabe3.36b064",
+    "name": "o1 s2",
+    "func": "var trace = String(msg.payload.trace);\ntrace = trace.concat(\", o1s2 STOP\");\nmsg.payload.trace = trace;\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 710,
+    "y": 300,
+    "wires": [
+      [
+        "b1f8b904.289928"
+      ]
+    ]
+  },
+  {
+    "id": "500d97a1.34cfb8",
+    "type": "function",
+    "z": "1cacabe3.36b064",
+    "name": "o2 s0",
+    "func": "var trace = String(msg.payload.trace);\ntrace = trace.concat(\", o2s0 STOP\");\nmsg.payload.trace = trace;\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 710,
+    "y": 360,
+    "wires": [
+      [
+        "b1f8b904.289928"
+      ]
+    ]
+  },
+  {
+    "id": "5a702a0b.c70754",
+    "type": "function",
+    "z": "1cacabe3.36b064",
+    "name": "o2 s1",
+    "func": "var trace = String(msg.payload.trace);\ntrace = trace.concat(\", o2s1 STOP\");\nmsg.payload.trace = trace;\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 710,
+    "y": 420,
+    "wires": [
+      [
+        "b1f8b904.289928"
+      ]
+    ]
+  },
+  {
+    "id": "789d60d3.8a0ba",
+    "type": "function",
+    "z": "1cacabe3.36b064",
+    "name": "o2 s2",
+    "func": "var trace = String(msg.payload.trace);\ntrace = trace.concat(\", o2s2 STOP\");\nmsg.payload.trace = trace;\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 710,
+    "y": 480,
+    "wires": [
+      [
+        "b1f8b904.289928"
+      ]
+    ]
+  },
+  {
+    "id": "d8d10958.dea5f8",
+    "type": "amqp-server",
+    "z": "1cacabe3.36b064",
+    "host": "10.0.75.2",
+    "port": "5672",
+    "vhost": "my_vhost",
+    "keepalive": "30",
+    "usetls": false,
+    "verifyservercert": true,
+    "usetopology": false,
+    "topology": "{\n\t\"exchanges\": [\n\t\t{\"name\": \"exchange1\", \"type\": \"direct\", \"options\": {\"durable\": false}},\n\t\t{\"name\": \"exchange2\"}\n\t],\n\t\"queues\": [\n\t\t{\"name\": \"queue1\", \"options\": {\"messageTtl\": 60000}},\n\t\t{\"name\": \"queue2\"}\n\t],\n\t\"bindings\": [\n\t\t{\"source\": \"exchange1\", \"queue\": \"queue1\", \"pattern\": \"debug\", \"args\": {}},\n\t\t{\"source\": \"exchange1\", \"exchange\": \"exchange2\", \"pattern\": \"error\"},\n\t\t{\"source\": \"exchange2\", \"queue\": \"queue2\"}\n\t]\n}"
+  }
+]
