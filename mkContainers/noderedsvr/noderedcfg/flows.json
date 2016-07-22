@@ -151,7 +151,7 @@
     "type": "switch",
     "z": "706c7407.8c38fc",
     "name": "select org",
-    "property": "payload.org",
+    "property": "payload.organizationId",
     "propertyType": "msg",
     "rules": [
       {
