@@ -68,11 +68,18 @@
       "durable": true,
       "auto_delete": false,
       "arguments": {}
+    },
+    {
+      "name": "routerq",
+      "vhost": "demo-vhost",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
     }
   ],
   "exchanges": [
     {
-      "name": "demo.router",
+      "name": "demo.routerex",
       "vhost": "demo-vhost",
       "type": "direct",
       "durable": true,
@@ -83,7 +90,7 @@
   ],
   "bindings": [
     {
-      "source": "demo.router",
+      "source": "demo.routerex",
       "vhost": "demo-vhost",
       "destination": "s1q",
       "destination_type": "queue",
@@ -91,7 +98,7 @@
       "arguments": {}
     },
     {
-      "source": "demo.router",
+      "source": "demo.routerex",
       "vhost": "demo-vhost",
       "destination": "s2q",
       "destination_type": "queue",
@@ -99,11 +106,19 @@
       "arguments": {}
     },
     {
-      "source": "demo.router",
+      "source": "demo.routerex",
       "vhost": "demo-vhost",
       "destination": "s3q",
       "destination_type": "queue",
       "routing_key": "s3",
+      "arguments": {}
+    },
+    {
+      "source": "demo.routerex",
+      "vhost": "demo-vhost",
+      "destination": "s3q",
+      "destination_type": "queue",
+      "routing_key": "routerq",
       "arguments": {}
     }
   ]
