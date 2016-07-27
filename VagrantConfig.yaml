@@ -52,7 +52,7 @@ a6:
 p1:
   ip: 192.168.65.60
   cpus: 2
-  memory: 2048
+  memory: 3048
   memory-reserved: 512
   type: agent-public
   aliases:
