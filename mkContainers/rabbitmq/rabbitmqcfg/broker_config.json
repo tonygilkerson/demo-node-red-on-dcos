@@ -49,28 +49,7 @@
   "policies": [],
   "queues": [
     {
-      "name": "s3q",
-      "vhost": "demo-vhost",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {}
-    },
-    {
-      "name": "s2q",
-      "vhost": "demo-vhost",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {}
-    },
-    {
-      "name": "s1q",
-      "vhost": "demo-vhost",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {}
-    },
-    {
-      "name": "routerq",
+      "name": "routerQ",
       "vhost": "demo-vhost",
       "durable": true,
       "auto_delete": false,
@@ -84,28 +63,63 @@
       "arguments": {}
     },
     {
-      "name": "supplierQ",
+      "name": "amazonItemQ",
       "vhost": "demo-vhost",
       "durable": true,
       "auto_delete": false,
       "arguments": {}
     },
     {
-      "name": "amazonQ",
+      "name": "ebayItemQ",
       "vhost": "demo-vhost",
       "durable": true,
       "auto_delete": false,
       "arguments": {}
     },
     {
-      "name": "ebayQ",
+      "name": "shopifyItemQ",
       "vhost": "demo-vhost",
       "durable": true,
       "auto_delete": false,
       "arguments": {}
     },
     {
-      "name": "shopifyQ",
+      "name": "shopifySupplierQ",
+      "vhost": "demo-vhost",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "amazonSupplierQ",
+      "vhost": "demo-vhost",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "ebaySupplierQ",
+      "vhost": "demo-vhost",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "trackingQ",
+      "vhost": "demo-vhost",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "contextQ",
+      "vhost": "demo-vhost",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "orderStatQ",
       "vhost": "demo-vhost",
       "durable": true,
       "auto_delete": false,
