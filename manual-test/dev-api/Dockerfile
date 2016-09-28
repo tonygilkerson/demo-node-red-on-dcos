@@ -1,13 +1,21 @@
 # to build
 # 	docker build -t dev-api .
+# 	docker build -t tonygilkerson/dev-api:v1 .
+# 	docker push tonygilkerson/dev-api:v1
+# to run...
+# 	docker run --name demo-dev-api -p 80:80 tonygilkerson/dev-api:v1
 #
 # to test:
+#	replace the ip with the IP of the docker host
 #	curl "http://127.0.0.1/api/accounts/1?token=sharp&suppressevents=true&dataformat=json" -usebasicparsing
 
+FROM microsoft/iis
 
-FROM webdeploy-iis
+ADD WebDeploy_amd64_en-US.msi /WebDeploy_amd64_en-US.msi
 
 ADD dev-api.zip /
+
+RUN msiexec /i c:\WebDeploy_amd64_en-US.msi /qn
 
 RUN Powershell -Command "Expand-Archive C:\dev-api.zip -dest C:\inetpub\wwwroot\dev-api "
 
