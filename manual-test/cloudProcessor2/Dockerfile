@@ -1,8 +1,11 @@
 # to build
-# docker build -t cloudcrocessor2 .
+# 	docker build -t cloudcrocessor2 .
+
+# 	docker build -t tonygilkerson/cloudcrocessor2:v1 .
+# 	docker push tonygilkerson/cloudcrocessor2:v1
 # 
-# I am not sure why but i had to specify the netork 
-# docker run -d  cloudcrocessor2
+# to run...
+# 	docker run -it tonygilkerson/dev-api:v1 Powershell
 #
 # use the following powershell command from within the container to verify it is running
 # 	Get-Process CloudProcessor2
