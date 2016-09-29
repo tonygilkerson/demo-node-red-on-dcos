@@ -25,4 +25,4 @@ RUN Powershell -Command "Add-WindowsFeature Web-App-Dev"
 
 RUN Powershell -Command "Add-WindowsFeature Web-Asp-Net45 -IncludeAllSubFeature"
 
-CMD ["powershell.exe", "-Command", "while($true) {curl -UseBasicParsing -Uri Http://127.0.0.1/api;start-sleep -Seconds 10}"]
+CMD ["powershell.exe", "-Command", "while($true) {echo 'Running dev-api:v2...';start-sleep -Seconds 10}"]
