@@ -119,6 +119,20 @@
       "arguments": {}
     },
     {
+      "name": "wsgQ",
+      "vhost": "demo-vhost",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "txQ",
+      "vhost": "demo-vhost",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
       "name": "orderStatQ",
       "vhost": "demo-vhost",
       "durable": true,

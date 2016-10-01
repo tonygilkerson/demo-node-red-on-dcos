@@ -1,0 +1,10 @@
+
+# ############
+# msi example
+# #############
+​
+# Get chef
+# RUN powershell -Command "wget https://www.opscode.com/chef/install.msi -OutFile C:\chef.msi"
+​
+# Install chef
+# RUN powershell -Command "cmd /c 'C:\Windows\System32\msiexec.exe /i C:\chef.msi /qn /quiet /norestart TARGETDIR=C:\'"

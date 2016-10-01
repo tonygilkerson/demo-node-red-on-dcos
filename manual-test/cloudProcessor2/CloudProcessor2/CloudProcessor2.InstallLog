@@ -1,0 +1,84 @@
+﻿Installing assembly 'C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.exe'.
+Affected parameters are:
+   assemblypath = C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.exe
+   logfile = C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.InstallLog
+Installing service CloudProcessor2...
+Service CloudProcessor2 has been successfully installed.
+Creating EventLog source CloudProcessor2 in log Application...
+See the contents of the log file for the C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.exe assembly's progress.
+The file is located at C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.InstallLog.
+Committing assembly 'C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.InstallLog
+   assemblypath = C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.exe
+Installing assembly 'C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.exe'.
+Affected parameters are:
+   assemblypath = C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.exe
+   logfile = C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.InstallLog
+Installing service CloudProcessor2...
+Creating EventLog source CloudProcessor2 in log Application...
+See the contents of the log file for the C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.exe assembly's progress.
+The file is located at C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.InstallLog.
+Rolling back assembly 'C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.InstallLog
+   assemblypath = C:\TFS\nChannel\nChannel\CloudProcessor2\bin\Debug\CloudProcessor2.exe
+Restoring event log to previous state for source CloudProcessor2.
+Installing assembly 'C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.exe'.
+Affected parameters are:
+   assemblypath = C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.exe
+   logfile = C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.InstallLog
+Installing service CloudProcessor2...
+Service CloudProcessor2 has been successfully installed.
+Creating EventLog source CloudProcessor2 in log Application...
+See the contents of the log file for the C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.exe assembly's progress.
+The file is located at C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.InstallLog.
+Committing assembly 'C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.InstallLog
+   assemblypath = C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.exe
+Installing assembly 'C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.exe'.
+Affected parameters are:
+   assemblypath = C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.exe
+   logfile = C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.InstallLog
+Installing service CloudProcessor2...
+Service CloudProcessor2 has been successfully installed.
+Creating EventLog source CloudProcessor2 in log Application...
+See the contents of the log file for the C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.exe assembly's progress.
+The file is located at C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.InstallLog.
+Committing assembly 'C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.InstallLog
+   assemblypath = C:\Program Files\nChannel\CloudProcessor2\CloudProcessor2.exe
+Installing assembly 'C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.exe'.
+Affected parameters are:
+   assemblypath = C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.exe
+   logfile = C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.InstallLog
+Installing service CloudProcessor2...
+Service CloudProcessor2 has been successfully installed.
+Creating EventLog source CloudProcessor2 in log Application...
+See the contents of the log file for the C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.exe assembly's progress.
+The file is located at C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.InstallLog.
+Committing assembly 'C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.InstallLog
+   assemblypath = C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.exe
+Installing assembly 'C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.exe'.
+Affected parameters are:
+   assemblypath = C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.exe
+   logfile = C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.InstallLog
+Installing service CloudProcessor2...
+Creating EventLog source CloudProcessor2 in log Application...
+See the contents of the log file for the C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.exe assembly's progress.
+The file is located at C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.InstallLog.
+Rolling back assembly 'C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.InstallLog
+   assemblypath = C:\Users\tonygilkerson\git-repos\demo-node-red-on-dcos\manual-test\cloudProcessor2\CloudProcessor2\CloudProcessor2.exe
+Restoring event log to previous state for source CloudProcessor2.
