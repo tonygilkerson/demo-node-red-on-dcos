@@ -1,3 +1,9 @@
+# $ docker build -t tonygilkerson/noderedsvr:v1 .
+# $ docker push tonygilkerson/noderedsvr:v1
+#
+# verify...
+# $ docker run --name demo-nodered -p 1880:1880 tonygilkerson/noderedsvr:v1
+#
 FROM node:4.4.7
 
 MAINTAINER Tony Gilkerson <tonygilkerson@yahoo.com>
